@@ -1,0 +1,12 @@
+<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Document</title></head><body>
+<script src=\"https://cdn.tailwindcss.com\"></script><script src=\"https://unpkg.com/htmx.org@2.0.1\"></script></body></html>
+<section><h1 hx-get=\"
+\" hx-trigger=\"load\">Edit lamp 
+</h1><button hx-post=\"
+\" class=\"bg-gray-300 py-1 px-2 active:bg-green-200 rounded\">Power</button> <input type=\"color\" name=\"color\" hx-post=\"
+\" hx-trigger=\"change\" hx-swap=\"none\"> <input type=\"range\" min=\"0\" max=\"100\" name=\"brightness\" hx-post=\"
+\" hx-swap=\"none\" hx-trigger=\"change\"><section class=\"flex gap-2 flex-wrap\">
+</section></section>
+<button hx-post=\"
+\" hx-trigger=\"click\" hx-swap=\"none\" class=\"
+\"></button>

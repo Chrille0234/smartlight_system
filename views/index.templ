@@ -1,0 +1,53 @@
+package Index
+
+templ Index() {
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+    @lamp("2b2805f8-fee5-4c60-bcc7-f8706ed1968f")
+    @lamp("e76e775e-7988-40b6-95e2-1e745a68a31e")
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+  </body>
+  </html>
+}
+
+
+templ lamp(id string){
+  <section>
+    <h1 hx-get={"/lamp_name/" + id} hx-trigger="load">Edit lamp { id }</h1>
+
+    <button hx-post={"/power/" + id} 
+    class="bg-gray-300 py-1 px-2 active:bg-green-200 rounded">Power</button>
+
+    <input type="color" name="color" 
+      hx-post={"/change_color/" + id} hx-trigger="change" hx-swap="none">
+
+    <input type="range" min="0" max="100" name="brightness" 
+      hx-post={"/change_brightness/" + id} hx-swap="none" hx-trigger="change">
+    
+    <section class="flex gap-2 flex-wrap">
+      @color("ff0000", id)
+      @color("00ff00", id)
+      @color("0000ff", id)
+      @color("ffff00", id)
+      @color("ff00ff", id)
+      @color("00ffff", id)
+      @color("ff8000", id)
+      @color("8000ff", id)
+      @color("00ff80", id)
+      @color("ff0080", id)
+    </section>
+  </section>
+}
+
+templ color(hex string, id string) {
+    <button hx-post={"/change_color/" + id + "?color=" + hex} hx-trigger="click" hx-swap="none" class={"h-20 w-20 bg-[#" + hex + "]"}></button>
+}
