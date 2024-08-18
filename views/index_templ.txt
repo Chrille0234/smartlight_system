@@ -1,12 +1,20 @@
-<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Document</title></head><body>
-<script src=\"https://cdn.tailwindcss.com\"></script><script src=\"https://unpkg.com/htmx.org@2.0.1\"></script></body></html>
-<section><h1 hx-get=\"
-\" hx-trigger=\"load\">Edit lamp 
-</h1><button hx-post=\"
+<!doctype html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Document</title><link href=\"/static/css/tailwind.css\" rel=\"stylesheet\"></head><body><section hx-get=\"/get_lamps\" hx-trigger=\"load\" hx-swap=\"innerHTML\"></section><form hx-get=\"/add_preset\" hx-swap=\"beforeend\" hx-target=\"#preset_container\"><label>Save current preset: <input name=\"preset_name\" class=\"border-2 border-solid border-black rounded\"></label> <button>Submit</button></form><section hx-trigger=\"load\" hx-get=\"/get_presets\" hx-swap=\"innerHTML\" id=\"preset_container\" class=\"space-y-2\"></section><button onclick=\"toggleDialog()\">Make a new group</button> <dialog hx-get=\"/get_lamp_names\" hx-trigger=\"load\" hx-swap=\"afterbegin\" hx-target=\"#groupsContainer\" open class=\"w-full h-full p-3 bg-black fixed top-[50%] bottom-[50%] text-white md:w-[600px] md:h-[650px]\"><button onclick=\"toggleDialog()\">X</button><form id=\"groupForm\" class=\"flex flex-col justify-center gap-3\" method=\"dialog\" hx-post=\"/add_group\" hx-on::after-request=\"this.reset()\"><label class=\"mb-5\">Group Name: <input name=\"group_name\" class=\"text-black p-1\"></label><div id=\"groupsContainer\" class=\"flex flex-wrap gap-1\"></div><button class=\"bg-white text-black w-fit px-2 py-1 rounded-lg text-xl\">Add group</button></form></dialog><script>\n      let dialog = document.querySelector(\"dialog\")\n\n      function toggleDialog(){\n        dialog.open = !dialog.open\n      }\n    </script><script src=\"https://unpkg.com/htmx.org@2.0.1\"></script></body></html>
+<section><h2>
+</h2><button hx-post=\"
 \" class=\"bg-gray-300 py-1 px-2 active:bg-green-200 rounded\">Power</button> <input type=\"color\" name=\"color\" hx-post=\"
-\" hx-trigger=\"change\" hx-swap=\"none\"> <input type=\"range\" min=\"0\" max=\"100\" name=\"brightness\" hx-post=\"
-\" hx-swap=\"none\" hx-trigger=\"change\"><section class=\"flex gap-2 flex-wrap\">
-</section></section>
-<button hx-post=\"
-\" hx-trigger=\"click\" hx-swap=\"none\" class=\"
-\"></button>
+\" hx-trigger=\"change\" hx-swap=\"none\" value=\"
+\"> <input type=\"range\" min=\"0\" max=\"100\" name=\"brightness\" hx-post=\"
+\" id=\"
+\" hx-swap=\"none\" hx-trigger=\"change\" value=\"
+\"></section>
+<div class=\"flex gap-0 rounded-lg min-w-60 w-60 border-2 border-black border-solid\" id=\"
+\"><button class=\"rounded-l-lg bg-orange-200 px-2 py-1 flex-grow\" hx-post=\"
+\" hx-swap=\"none\">
+</button> <button class=\"bg-blue-200 px-3 py-1 rounded-r-lg\" hx-get=\"
+\" hx-swap=\"outerHTML\" hx-target=\"
+\">X</button></div>
+<label id=\"
+\" class=\"
+\"><input type=\"checkbox\" name=\"
+\" hidden> 
+</label>

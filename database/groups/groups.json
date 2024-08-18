@@ -1,0 +1,20 @@
+{
+  "groups": {
+    "YOOOO!": {
+      "ids": {
+        "03a80cbe-c119-481b-bd41-14d35972cd6f": "Lama",
+        "26cdb9ed-0a96-40a9-8975-b3bc4a0e724e": "Philips-10-Sabircan",
+        "2b2805f8-fee5-4c60-bcc7-f8706ed1968f": "Christian Lampe",
+        "52322746-0f62-47a2-b41f-fa500499b82a": "Qwerty",
+        "60b598c4-55ee-4843-b276-2bdcfa1b723f": "Hue color lamp 1",
+        "7488f520-d4f5-4018-9ede-70bee85a767f": "Abe",
+        "e76e775e-7988-40b6-95e2-1e745a68a31e": "Ekstra"
+      }
+    },
+    "endnu en gruppe": {
+      "ids": {
+        "ab76c66b-51ef-4ce5-987b-4c5e787c60e5": "Ekstra 2"
+      }
+    }
+  }
+}
