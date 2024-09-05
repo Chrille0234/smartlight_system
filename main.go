@@ -31,12 +31,7 @@ func main() {
   http.HandleFunc("GET /delete_preset/{preset_name}", HandleDeletePreset)
   http.HandleFunc("POST /add_group", HandleAddGroup)
 
-  // I dont know if i even need this endpoint anymore....
-//  http.HandleFunc("POST /lamp_name/{id}", func(w http.ResponseWriter, r *http.Request) {
-//    lamp := getLampData(r.PathValue("id"), client)
-//    message := fmt.Sprintf("Edit lamp %s", lamp.Metadata.Name)
-//    w.Write([]byte(message))
-//  })
+
 
   http.ListenAndServe(":3000", nil)
 }
